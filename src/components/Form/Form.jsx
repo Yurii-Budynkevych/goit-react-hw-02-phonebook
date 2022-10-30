@@ -9,7 +9,6 @@ const init = {
 const ContactForm = ({ onSubmit }) => {
   return (
     <>
-      <h1 className="title">Phonebook</h1>
       <Formik initialValues={init} onSubmit={onSubmit}>
         <Form autoComplete="off">
           <label>
@@ -32,7 +31,9 @@ const ContactForm = ({ onSubmit }) => {
               required
             />
           </label>
-          <button type="sumbit">Add contact</button>
+          <button className="btn" type="sumbit">
+            Add contact
+          </button>
         </Form>
       </Formik>
     </>
