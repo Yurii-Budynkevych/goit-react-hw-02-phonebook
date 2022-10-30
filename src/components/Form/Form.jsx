@@ -12,7 +12,7 @@ const ContactForm = ({ onSubmit }) => {
       <Formik initialValues={init} onSubmit={onSubmit}>
         <Form autoComplete="off">
           <label>
-            Name
+            Name{' '}
             <Field
               type="text"
               name="name"
