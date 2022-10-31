@@ -34,15 +34,25 @@ export class App extends React.Component {
     }));
   };
 
+  filterHandler = e => {
+    this.setState({ filter: e.target.value });
+  };
+
   render() {
+    const { filter, contacts } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+    const visibleContacts = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
+
     return (
       <>
         <h1 className="title">Phonebook</h1>
         <ContactForm onSubmit={this.submitHandler} />
 
         <h2 className="subtitle">Contacts</h2>
-        <Filter />
-        <ContactList arr={this.state.contacts} onDelete={this.deleteHandler} />
+        <Filter value={filter} onFilter={this.filterHandler} />
+        <ContactList arr={visibleContacts} onDelete={this.deleteHandler} />
       </>
     );
   }
