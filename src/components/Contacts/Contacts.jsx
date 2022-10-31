@@ -2,11 +2,17 @@ import PropTypes from 'prop-types';
 import ListItem from './Item/Item';
 import './Contacts.css';
 
-const ContactList = ({ arr }) => {
+const ContactList = ({ arr, onDelete }) => {
   return (
     <ul>
       {arr.map(el => (
-        <ListItem key={el.id} name={el.name} value={el.number} />
+        <ListItem
+          key={el.id}
+          name={el.name}
+          value={el.number}
+          onDelete={onDelete}
+          id={el.id}
+        />
       ))}
     </ul>
   );
@@ -21,4 +27,5 @@ ContactList.propTypes = {
       id: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
