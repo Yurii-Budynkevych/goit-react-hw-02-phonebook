@@ -1,7 +1,8 @@
 import React from 'react';
-import './App.css';
 import shortid from 'shortid';
+import './App.css';
 import ContactForm from './Form/Form';
+import ContactList from './Contacts/Contacts';
 
 export class App extends React.Component {
   state = {
@@ -28,6 +29,7 @@ export class App extends React.Component {
         <ContactForm onSubmit={this.submitHandler} />
 
         <h2 className="subtitle">Contacts</h2>
+        <ContactList arr={this.state.contacts} />
       </>
     );
   }
