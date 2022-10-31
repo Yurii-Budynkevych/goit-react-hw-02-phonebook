@@ -3,6 +3,7 @@ import shortid from 'shortid';
 import './App.css';
 import ContactForm from './Form/Form';
 import ContactList from './Contacts/Contacts';
+import Filter from './Filter/Filter';
 
 export class App extends React.Component {
   state = {
@@ -29,6 +30,7 @@ export class App extends React.Component {
         <ContactForm onSubmit={this.submitHandler} />
 
         <h2 className="subtitle">Contacts</h2>
+        <Filter />
         <ContactList arr={this.state.contacts} />
       </>
     );

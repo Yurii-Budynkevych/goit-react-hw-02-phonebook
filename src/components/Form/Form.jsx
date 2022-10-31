@@ -1,4 +1,5 @@
 import { Formik, Form, Field } from 'formik';
+import PropTypes from 'prop-types';
 import './Form.css';
 
 const init = {
@@ -40,3 +41,7 @@ const ContactForm = ({ onSubmit }) => {
   );
 };
 export default ContactForm;
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
